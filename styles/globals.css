@@ -5275,7 +5275,7 @@ header.sticky {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #ddd; /* Agar image load na ho to background color dikhayi de */
+    /* background-color: #ddd; Agar image load na ho to background color dikhayi de */
   }
   
   .logom img {

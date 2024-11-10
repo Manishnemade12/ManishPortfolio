@@ -170,7 +170,7 @@ export default function Home() {
 
         <meta name="description" content="manish - Personal Portfolio" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="shortcut icon" type="image/png" href="/favicon.png" />
+        <link rel="shortcut icon" type="image/png" href="/img/logo1.png" />
       </Head>
 
       {/* Hero Section */}
@@ -266,7 +266,7 @@ export default function Home() {
         </div>
       </section>
 
-   {/* Technical stack */}
+      {/* Technical stack */}
       <section className="services">
         <div className="container">
           <div className="services_titles">
@@ -333,8 +333,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Experience study */}
-      <section className="recentblogs">
+
+      {/* Experience study recentblogs */}
+      <section className="exstudy">
         <div className="container flex flex-left flex-sb">
           {loading ? (
             <p>Loading...</p>
@@ -342,7 +343,7 @@ export default function Home() {
             <div className="education">
               <div className="experience_title flex gap-1">
                 <PiGraduationCap />
-                <h2>Education Details</h2>
+                <h2>My Education Details</h2>
 
               </div>
               <div className="exper_cards">
@@ -422,7 +423,7 @@ export default function Home() {
             <button className={selectedCategory === 'Database' ? 'active' : ''} onClick={() => setSelectedCategory('Database')}>Database</button>
             <button className={selectedCategory === 'Kubernetes' ? 'active' : ''} onClick={() => setSelectedCategory('Kubernetes')}>Kubernetes</button>
           </div>
-          
+
           <div className="projects_cards">
             {loading ? (
               <div className="flex flex-center wh_50">
@@ -584,30 +585,6 @@ export default function Home() {
         </div>
 
       </section>
-
-
-      {/* Recent Blogs */}
-      {/* <section className="recentblogs">
-        <div className="container">
-          <div className="myskills_title">
-            <h2>Recent Blogs</h2>
-            <p>Read my latest articles on web development and tech trends.</p>
-          </div>
-
-          <div className="recent_blogs">
-            {allwork.slice(0, 3).map((blog) => {
-              return <Link href={`/blogs/${blog.slug}`} key={blog._id} className="re_blog">
-                <div className="re_blogimg">
-                  <img src={blog.images[0] || '/img/noimage.png'} alt={blog.title} />
-                  <span>{blog.blogcategory[0]}</span>
-                </div>
-              </Link>
-            })}
-          </div>
-
-        </div> 
-      </section>  */}
-
 
       <section className="recentblogs">
         <div className="container">

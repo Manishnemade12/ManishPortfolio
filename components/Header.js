@@ -80,7 +80,7 @@ export default function Header() {
                     <div className="logo flex gap-2">
                         <div className="logom">
                         <Link href="/">
-                            <img src={`/img/${darkMode ? 'logo3' : 'logo2'}.png`} alt="logo" />
+                            <img src={`/img/${darkMode ? 'logo2' : 'logo1'}.png`} alt="logo" />
                             {/* <img src={`/img/${darkMode ? 'white' : 'logo'}.png`} alt="logo" /> */}
                         </Link>
                         </div>
