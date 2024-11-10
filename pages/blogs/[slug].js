@@ -167,17 +167,6 @@ const BlogPage = () => {
 
     }
 
-    // const handleReply = (parentCommentId, parentName) => {
-    //     setNewComment({
-    //         ...newComment,
-    //         parent: parentCommentId,
-    //         parentName,
-    //         maincomment: false
-    //     });
-    //     replyFormRef.current?.scrollIntoView({ behavior: 'smooth' });
-    // };
-
-
     const handleRemoveReply = () => {
         setNewComment({
             ...newComment,
@@ -294,32 +283,6 @@ const BlogPage = () => {
         }
     };
 
-    // const renderComments = (comments) => comments.map(comment => (
-    //     <div className="blogComment" key={comment._id}>
-    //         <h3>{comment.name} <span>{new Date(comment.createdAt).toLocaleString()}</span></h3>
-    //         <h4>Topic: <span>{comment.title}</span></h4>
-    //         <p>{comment.contentpera}</p>
-    //         <button onClick={() => handleReply(comment._id, comment.name)}>
-    //             Reply
-    //         </button>
-
-    //         {/* {comment.parent && (
-    //                         <span className="repliedto">Repied to {parentComment.parentName}</span> // Replace 'Reply' with whatever text you want to show
-    //                     )} */}
-
-
-    //         <div className="children-comments">
-    //             {comment.children?.map(child => (
-    //                 <div className="child-comment" key={child._id}>
-    //                     <h3>{child.name} <span>{new Date(child.createdAt).toLocaleString()}</span></h3>
-    //                     <h4>Topic: <span>{child.title}</span></h4>
-    //                     <p>{child.contentpera}</p>
-    //                 </div>
-    //             ))}
-    //         </div>
-    //     </div>
-    // ));
-
     const renderComments = (comments) => {
         if (!comments || comments.length === 0) {
             return <p>No comments available.</p>; // Handle empty comments array
@@ -363,10 +326,11 @@ const BlogPage = () => {
                     Reply
                 </button>
 
-                <div className="children-comments">
+                <   div className="children-comments">
                     {parentComment.children.map(childComment => (
                         <div className="child-comment" key={childComment._id}>
-                            <h3>{childComment.name} <span>{new Date(childComment.createdAt).toLocaleString()}</span></h3>
+                           <span> <p1>{new Date(childComment.createdAt).toLocaleString()}</p1></span>
+                           <h3>{childComment.name}</h3>
                             <h4>Title: <span>{childComment.title}</span></h4>
                             <p>{childComment.contentpera}</p>
                         </div>

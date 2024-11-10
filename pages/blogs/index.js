@@ -97,26 +97,7 @@ export default function blogs() {
                                         modules={[FreeMode]}
 
                                     >
-                                        {/* {loading ? <Spinner /> : <>{sliderpubdata.slice(0,6).map((blog) => {
-                                            return <SwiperSlide key={blog._id} >
-                                                <div className='fpost' key={blog._id}>
-                                                    <Link href={`/blogs${blog.slug}`}>
-                                                    <img src={blog.images[0]} alt={blog.title} />
-                                                    </Link>
-                                                    <div className='fpostinfo'>
-                                                        <div className='tegs flex'>
-                                                            { blog.blogcategory.map((cat) => {
-                                                                return <Link href={`/blog/category${cat}`} className='ai'><span></span>{cat}</Link>
-                                                            }) }
-
-                                                        </div>
-
-                                                    </div>
-
-                                                </div>
-                                                </SwiperSlide>
-                                        })}</> }
-                                         */}
+                                    
 
                                         {loading ? <Spinner /> : (
                                             <>
@@ -173,7 +154,7 @@ export default function blogs() {
                     <div className='border'></div>
                     <div className='populartegsdata'>
                         <div className='fetitle'>
-                            <h3>Popular Tegs</h3>
+                            <h3>Popular Tags</h3>
 
                         </div>
                         <div className='poputegs'>
@@ -255,22 +236,6 @@ export default function blogs() {
                         </div>
 
                     </div>
-
-                    {/* {publishedData.length === 0 ? (" ") : (
-                        <div className="blogspaginationbtn flex flex-center mt-3 ">
-                            <button onClick={() => paginate(curretPage - 1)} disabled={curretPage === 1}>previous</button>
-                            {pageNumbers.slice(Math.max(curretPage - 3, 0), Math.min(curretPage + 2, pageNumbers.length)).map(number => {
-                                <button key={number}
-                                    onClick={() => paginate(number)}
-                                    className={`${curretPage === number ? 'active' : ''}`}
-                                >
-                                    {number}
-                                </button>
-                            })}
-                            <button onClick={() => paginate(curretPage + 1)} disabled={currentBlogs.length < perPage}>Next</button>
-                        </div>  
-                    )} */}
-
 
                     {publishedData.length === 0 ? (
                         " "

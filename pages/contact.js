@@ -66,7 +66,7 @@ export default function Contact() {
     return (
         <>
             <Head>
-                <title>Contact us</title>
+                <title>Contact me</title>
             </Head>
 
             <div className="contactpage">
@@ -75,9 +75,9 @@ export default function Contact() {
                         <div className="leftcontp">
                             <h2>Get in touch</h2>
                             <h2>Let's talk about projects</h2>
-                            <p>Connect with me on various platforms for open-source contribution and social projects.</p>
+                            <p>Connect with me on various platforms for open-source contributions.</p>
                             <p>I am always eager to learn new technologies.</p>
-                            <p>I love questions and feedback and am always happy to help!</p>
+                            <p>I enjoy receiving questions and feedback and am always happy to help!</p>
                             <div className="leftsociinfo">
                                 <ul>
                                     <li><FaPhoneVolume /> <span>Phone: <a href="tel:92#########2"></a></span></li>

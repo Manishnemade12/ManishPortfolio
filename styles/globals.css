@@ -4222,12 +4222,13 @@ header.sticky {
     align-items: flex-end;
     justify-content: flex-end;
     flex-direction: column;
-    gap: 100rem;
+    gap: 2rem;
+    /* gap: 100rem; */
     width: 100%;
     /* display: none; */
 }
 
-.children-comments p {
+.children-comments p1 {
     border-color: #353535;
     padding-top: 20px;
 }
@@ -4235,7 +4236,7 @@ header.sticky {
 .child-comment span {
     padding-bottom: 1px;
     display: block;
-    color: #bb4242;
+    color: #8b7b7b;
     font-size: 0.8em;
     padding-top: 10px;
     padding-right: 0;
