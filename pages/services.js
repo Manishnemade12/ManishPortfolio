@@ -25,7 +25,7 @@ export default function services() {
                             <img src="/img/website_icon.svg" alt="" />
 
                             <ul>
-                                <li>Unfortunationaly , Not Yet !</li>
+                                <li>unfortunately , Not Yet !</li>
                                 {/* <li></li> */}
                             </ul>
                         </div>

@@ -19,17 +19,24 @@ body {
 }
 
 /* change image manish image  */
-:root {
+/* :root {
     --image-url: url('/img/me.png');
 }
 
 .dark {
     --image-url: url('/img/coderwhite.png');
 }
+    */
 
 .hero_img_box img {
-    content: var(--image-url);
-}
+    height: 39vw;
+    width: 30vw;
+} 
+
+.hero_img_boxs img {
+    height: 39vw;
+    width: 30vw;
+} 
 
 body .dark {
     background-color: #fff !important;
@@ -4684,6 +4691,7 @@ header.sticky {
         margin: 2rem 0;
     }
 
+
     .hero_title {
         font-size: 65px;
         text-align: center;
@@ -5285,3 +5293,5 @@ header.sticky {
     /* object-fit: cover; Image ko circle ke andar fit karne ke liye */
   }
   
+
+ 

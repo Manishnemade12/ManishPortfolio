@@ -8,10 +8,6 @@ import { GoArrowUpRight } from "react-icons/go";
 import { useEffect, useState } from "react";
 import Spinner from "@/components/Spinner";
 import { PiGraduationCap } from "react-icons/pi";
-import blogs from "./blogs";
-import { FaCalendarDay } from "react-icons/fa";
-import useFetchData from "@/hooks/useFetchData";
-
 export default function Home() {
   const [activeIndex, setactiveIndex] = useState(0);
   const [loading, setLoading] = useState(true);
@@ -138,7 +134,7 @@ export default function Home() {
         );
       }
     }
-  }, [selectedCategory, alldata]);  // Make sure alldata is populated before filtering
+  }, [selectedCategory, alldata]); 
 
 
   const handleCategoryChange = (category) => {
@@ -160,8 +156,6 @@ export default function Home() {
     return new Intl.DateTimeFormat('en-US', options).format(date);
 
   }
-
-
 
   return (
     <>
@@ -192,14 +186,25 @@ export default function Home() {
                 : (<Spinner />
                 )}
               <h1 className="hero_title">
-                Full Stack <br />
+                {/* Full Stack <br />
                 <span className="typed-text" data-aos="fade-right">
                   {profileData ? profileData.profession : <Spinner />}
-                </span>
+                </span> */}
+                <span
+                  className="typed-text"
+                  data-aos="fade-right"
+                  dangerouslySetInnerHTML={{
+                    __html: profileData
+                      ? profileData.profession.replace(" ", "<br>")
+                      : <Spinner />,
+                  }}
+                ></span>
+
               </h1>
+              {/* 36 */}
 
               <div className="hero_img_box heroimgbox" data-aos="fade-left" data-aos-easing='ease-out-cubic' data-aos-duration='2000'>
-                <img src="img/me.jpg" alt="coder" />
+              <img src={profileData ? profileData.images : <Spinner />} />
 
               </div>
               <div className="lead" data-aos='fade-up'>
@@ -236,7 +241,7 @@ export default function Home() {
 
             <div className="heroimageright">
               <div className="hero_img_box" data-aos="fade-left" data-aos-easing='ease-out-cubic' data-aos-duration='2000'>
-                <img src="img/coder.png" />
+                <img src={profileData ? profileData.images : <Spinner />} />
               </div>
             </div>
           </div>

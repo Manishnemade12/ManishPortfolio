@@ -150,7 +150,7 @@ export default function Contact() {
                                     ))}
                                 </div>
                                 <div className="rightconttitle">
-                                    <p>Selected time slot: {price}</p>
+                                    <p>Time Selected Between: {price}</p>
                                 </div>
                                 <div className="rightconttitle">
                                     <h2>Breif Description</h2>

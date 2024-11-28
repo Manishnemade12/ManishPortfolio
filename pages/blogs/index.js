@@ -1,10 +1,6 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
-
-// Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
-
-// import required modules
 import { FreeMode } from 'swiper/modules';
 import Head from 'next/head';
 import { useState } from 'react';
@@ -254,7 +250,7 @@ export default function blogs() {
                                 </button>
                             ))}
 
-                            {/* <span>{curretPage}</span>*/}
+                             {/* <span>{curretPage}</span> */}
 
                             <button onClick={() => paginate(curretPage + 1)} disabled={currentBlogs.length < perPage}>
                                 Next
