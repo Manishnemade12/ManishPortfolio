@@ -16,6 +16,7 @@ export default function Home() {
   const [filteredProjects, setFilteredProjects] = useState([]);
   const [allwork, setAllwork] = useState([]);
   const [profileData, setProfileData] = useState(null);
+  const [skillData, setSkillData] = useState([]);
   const [educationData, setEducationData] = useState(null);
 
   const handlehover = (index) => {
@@ -103,6 +104,26 @@ export default function Home() {
     };
 
     fetchProfileData();
+  }, []);
+
+  // skills data
+  useEffect(() => {
+    const fetchSkillData = async () => {
+      try {
+        console.log("Fetching blogs from API...");
+        const response = await fetch('/api/skill');
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        console.log("Fetched skill data: ", data);
+        setSkillData(data); // Save the fetched array in state
+      } catch (error) {
+        console.error('Error fetching skill:', error);
+      }
+    };
+
+    fetchSkillData();
   }, []);
 
 
@@ -455,11 +476,61 @@ export default function Home() {
 
 
 
+      {/* <section>
+      <h1>Skills</h1>
+      <div className="skills-container">
+        {skillData.length > 0 ? (
+          skillData.map((skill, index) => (
+            <div key={index} className="skill-card">
+              <img
+                src={skill.images[0]} 
+                alt={`${skill.title} image`}
+                className="skill-image"
+              />
+              <h2>{skill.title}</h2>
+              <p>{skill.description}</p>
+            </div>
+          ))
+        ) : (
+          <p>Loading skills...</p> 
+        )}
+      </div>
+    </section> */}
+
+<section className="myskills">
+  <div className="container">
+    <div className="myskills_title">
+      <h2>My Skills</h2>
+      <p>Here are some of my technical skills.</p>
+    </div>
+
+    <div className="myskills_cards">
+      {skillData.length > 0 ? (
+        skillData.map((skill, index) => (
+          <div key={index} className="mys_card">
+            <div className="mys_inner">
+              {/* Dynamically fetched image */}
+              <img
+                src={skill.images[0]} // Fetch the first image from the API
+                alt={`${skill.title} image`}
+                className="skill-image"
+              />
+              {/* Skill description */}
+              <h3>{skill.description}</h3>
+            </div>
+            {/* Skill title */}
+            <p className="text-center">{skill.title}</p>
+          </div>
+        ))
+      ) : (
+        <p>Loading skills...</p>
+      )}
+    </div>
+  </div>
+</section>
 
 
-
-
-      {/* My Skills */}
+      {/* My Skills
       <section className="myskills">
         <div className="container">
           <div className="myskills_title">
@@ -476,50 +547,10 @@ export default function Home() {
               </div>
               <p className="text-center">ReactJs</p>
             </div>
-
-
-            <div className="mys_card">
-              <div className="mys_inner">
-                <img src="/img/firebase.svg" alt="firebase" />
-                <h3>84%</h3>
-
-              </div>
-              <p className="text-center">Firebase</p>
             </div>
 
 
-            <div className="mys_card">
-              <div className="mys_inner">
-                <img src="/img/mongodb.svg" alt="mongodb" />
-                <h3>92%</h3>
-
-              </div>
-              <p className="text-center">MongoDB</p>
-            </div>
-
-
-            <div className="mys_card">
-              <div className="mys_inner">
-                <img src="/img/redux.svg" alt="redux" />
-                <h3>87%</h3>
-
-              </div>
-              <p className="text-center">Redux-toolkit</p>
-            </div>
-
-
-
-            <div className="mys_card">
-              <div className="mys_inner">
-                <img src="/img/js.svg" alt="javascript" />
-                <h3>84%</h3>
-
-              </div>
-              <p className="text-center">Javascript</p>
-            </div>
-
-
-          </div>
+           
           <span>
 
             <div className="myskils_cards">
@@ -589,7 +620,7 @@ export default function Home() {
 
         </div>
 
-      </section>
+      </section> */}
 
       <section className="recentblogs">
         <div className="container">

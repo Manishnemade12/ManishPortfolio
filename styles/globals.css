@@ -1459,67 +1459,71 @@ header.sticky {
 /* $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ */
 /* $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ myskills SECTION */
 /* $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ */
-
 .myskills {
     position: relative;
     padding: 120px 1rem;
     background: #0f0715;
-}
-
-.dark .myskills {
+  }
+  
+  .dark .myskills {
     background: var(--pure-white);
-}
-
-.myskills_title {
+  }
+  
+  .myskills_title {
     position: relative;
-    text-align: center;
+    text-align: center; /* Ensure the title and description are centered */
     margin-bottom: 50px;
     max-width: 700px;
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-}
-
-.myskills_title h2 {
+  }
+  
+  .myskills_title h2 {
     font-size: 45px;
     background: linear-gradient(to right, var(--main-site-color) 0%, #dddddd 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-}
-
-.dark .myskills_title h2 {
+  }
+  
+  .dark .myskills_title h2 {
     font-size: 45px;
     background: linear-gradient(to right, var(--main-site-color) 0%, var(--dark-site-secondary) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-}
-
-.myskills_title p {
+  }
+  
+  .myskills_title p {
     margin-top: 15px;
     font-size: 18px;
-    text-align: center;
+    text-align: center; /* Center the description */
     color: #999;
-}
-
-.dark .myskills_title p {
+  }
+  
+  .dark .myskills_title p {
     color: var(--dark-black);
-}
-
-.myskils_cards {
+  }
+  
+  .myskills_cards {
     width: 100%;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
+    flex-wrap: wrap; /* Allow wrapping to the next line */
+    justify-content: center; /* Center the cards */
+    gap: 1.5rem; /* Add spacing between cards */
     margin-top: 3rem;
-}
-
-.mys_card {
-    max-width: 180px;
+  }
+  
+  .mys_card {
+    flex: 1 1 calc(20% - 1.5rem); /* Allow up to 5 cards per row */
+    max-width: 180px; /* Ensure consistent width */
     text-align: center;
-}
-
-.mys_inner {
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    align-items: center; /* Center content horizontally */
+    margin: 0 1rem;
+  }
+  
+  .mys_inner {
     position: relative;
     border-radius: 25px;
     padding: 2rem 3.5rem;
@@ -1527,60 +1531,53 @@ header.sticky {
     border: 1px solid transparent;
     margin-bottom: 15px;
     transition: 0.6s;
-    /* border: 1px solid #905ff1; */
     overflow: hidden;
     z-index: 1;
-    transition: 0.3s ease-in-out;
-}
-
-.dark .mys_inner {
+    display: flex;
+    flex-direction: column; /* Stack inner content vertically */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    height: 200px; /* Set a fixed height to maintain uniformity */
+  }
+  
+  .dark .mys_inner {
     background: var(--week-white);
-}
-
-.mys_inner::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: var(--dark-site-secondary);
-    z-index: -1;
-    opacity: 0;
-    transition: 0.3s ease-in-out;
-}
-
-.mys_card img {
-    max-width: 70px;
-    margin: 0 auto 30px;
+  }
+  
+  .mys_inner img {
+    max-width: 90px;
+    max-height: auto;
+    overflow: hidden;
+    margin: 0 auto 15px; /* Adjust margin for spacing */
     transition: 0.3s;
-}
-
-.dark .mys_inner h3 {
+  }
+  
+  .mys_inner h3 {
+    margin: 0;
+  }
+  
+  .dark .mys_inner h3 {
     color: var(--dark-site-secondary);
-}
-
-.dark .mys_inner:hover h3 {
+  }
+  
+  .dark .mys_inner:hover h3 {
     color: var(--main-hover-color);
-}
-
-.mys_card:hover .mys_inner::before {
-    opacity: 1;
-}
-
-.mys_card:hover .mys_inner {
-    border: 1px solid var(--main-hover-color);
-}
-
-.mys_card:hover .mys_inner img {
-    transform: scale(1.1);
-}
-
-.mys_card p {
+  }
+  
+  .mys_card p {
     color: var(--main-site-color);
     font-size: 18px;
-}
-
+    margin-top: auto; /* Push the paragraph to the bottom if space allows */
+  }
+  
+  .mys_card:hover .mys_inner {
+    border: 1px solid var(--main-hover-color);
+  }
+  
+  .mys_card:hover .mys_inner img {
+    transform: scale(1.1);
+  }
+  
 
 /* $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ */
 /* $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ recentblogs SECTION */
