@@ -224,7 +224,7 @@ const BlogPage = () => {
         return new Intl.DateTimeFormat('en-US', options).format(date);
     };
 
-    const blogurl = `https://portfolio-mansh.vercel.app/blogs/${slug}`;
+    const blogurl = `https://manish-portfolio-6mbj.vercel.app/blogs/${slug}`;
 
     // Copy URL function
     const handlecopyUrl = (url) => {
@@ -380,16 +380,16 @@ const BlogPage = () => {
                                     <div className="Copy URL" onClick={() => handlecopyUrl(blogurl)} style={{ cursor: 'pointer' }}>
                                         <BsCopy /> <span>{copied ? 'Copied' : ""}</span>
                                     </div>
-                                    <a target="_blank" href={`http://www.facebook.com/sharer.php?u=${encodeURIComponent(blogurl)}`} rel="noopener noreferrer">
+                                    <a target="_blank" href={`http://www.facebook.com/sharer.php?u=https://manish-portfolio-6mbj.vercel.app/${encodeURIComponent(blogurl)}`} rel="noopener noreferrer">
                                         <RiFacebookFill />
                                     </a>
-                                    <a target="_blank" href={`http://www.twitter.com/intent/tweet?text=${encodeURIComponent('Check Out This blog post: ' + blogurl)}`} rel="noopener noreferrer">
+                                    <a target="_blank" href={`http://www.twitter.com/intent/tweet?text=https://manish-portfolio-6mbj.vercel.app/${encodeURIComponent('Check Out This blog post: ' + blogurl)}`} rel="noopener noreferrer">
                                         <FaTwitter />
                                     </a>
-                                    <a target="_blank" href={`http://wa.me/?text=Check out this Blog Post:${encodeURIComponent(blogurl)}`} rel="noopener noreferrer">
+                                    <a target="_blank" href={`http://wa.me/?text=Check out this Blog Post: https://manish-portfolio-6mbj.vercel.app/${encodeURIComponent(blogurl)}`} rel="noopener noreferrer">
                                         <RiWhatsappFill />
                                     </a>
-                                    <a target="_blank" href={`http://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(blogurl)}`} rel="noopener noreferrer">
+                                    <a target="_blank" href={`http://www.linkedin.com/sharing/share-offsite/?url=https://manish-portfolio-6mbj.vercel.app/${encodeURIComponent(blogurl)}`} rel="noopener noreferrer">
                                         <BiLogoLinkedin />
                                     </a>
                                 </div>
