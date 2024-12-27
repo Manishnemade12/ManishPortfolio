@@ -5313,3 +5313,15 @@ header.sticky {
         margin: 0 auto; /* Center align root element */
     }
 }
+
+
+
+
+
+  @media screen and (min-width: 380px) and (max-width: 420px) {
+    .preloader svg {
+      width: 480px;
+      height: 100%;
+    }
+  }
+  
