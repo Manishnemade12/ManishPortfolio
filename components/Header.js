@@ -157,9 +157,9 @@ export default function Header() {
                             </li>
 
                         </ul>
-                         <div className="adjustment">
-                        <p>Copyright &copy; 2024 | Manish_Nemade</p>
-                        </div> *
+                        //  <div className="adjustment">
+                        // <p>Copyright &copy; 2024 | Manish_Nemade</p>
+                        // </div> *
                        <p>.</p>
                     </div>
                 </nav>
