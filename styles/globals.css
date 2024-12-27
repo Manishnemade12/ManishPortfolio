@@ -5113,6 +5113,7 @@ header.sticky {
 
     .mobilenavlist {
         width: 350px;
+       
     }
 
     .galeryimgiteminfo p {
@@ -5127,6 +5128,7 @@ header.sticky {
         width: 50px;
     }
 }
+
 
 
 
@@ -5289,6 +5291,24 @@ header.sticky {
     height: 100%;
     /* object-fit: cover; Image ko circle ke andar fit karne ke liye */
   }
-  
 
- 
+  /* @media screen and (max-width: 380px) {
+    :root {
+        width: 500px;
+        margin: 0 auto;
+    }
+} */
+
+@media screen and (max-width: 380px) {
+    :root {
+        width: 420px !important;
+        margin: 0 auto !important;
+    }
+}
+
+@media screen and (min-width: 380px) and (max-width: 420px) {
+    :root {
+        width: 480px; /* Set root width to 420px */
+        margin: 0 auto; /* Center align root element */
+    }
+}

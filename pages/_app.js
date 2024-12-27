@@ -55,7 +55,9 @@ export default function App({ Component, pageProps }) {
     <Preloader isLoading={isLoading} />
     <Header />
     {!isLoading && (
-      <main id="site-wrapper">
+      <main id="site-wrapper"
+      // className="mainop"
+      >
         <Component {...pageProps} />
       </main>
     )}

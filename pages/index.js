@@ -7,6 +7,7 @@ import { LiaBasketballBallSolid } from "react-icons/lia";
 import { GoArrowUpRight } from "react-icons/go";
 import { useEffect, useState } from "react";
 import Spinner from "@/components/Spinner";
+import { CiInstagram } from "react-icons/ci";
 import { PiGraduationCap } from "react-icons/pi";
 export default function Home() {
   const [activeIndex, setactiveIndex] = useState(0);
@@ -237,8 +238,8 @@ export default function Home() {
                 </Link>
                 <ul className="hero_social">
                   <li>
-                    <a href="/">
-                      <FaTwitter />
+                    <a href="https://www.instagram.com/manish_nemade_190/">
+                      <CiInstagram />
                     </a>
                   </li>
                   <li>
@@ -247,18 +248,20 @@ export default function Home() {
                     </a>
                   </li>
                   <li>
-                    <a href="/">
+                    <a href="https://in.linkedin.com/in/manish-nemade-aaa69b28a">
                       <GrLinkedinOption />
                     </a>
                   </li>
                   <li>
-                    <a href="/">
+                    <a href="https://github.com/Manishnemade12">
                       <FaGithub />
                     </a>
                   </li>
                 </ul>
               </div>
             </div>
+
+           
 
             <div className="heroimageright">
               <div className="hero_img_box" data-aos="fade-left" data-aos-easing='ease-out-cubic' data-aos-duration='2000'>
