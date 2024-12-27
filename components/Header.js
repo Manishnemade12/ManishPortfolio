@@ -158,7 +158,7 @@ export default function Header() {
 
                         </ul>
                     
-                       <p>.</p>
+                       <p>Copyright &copy; 2024 | Manish_Nemade</p>
                     </div>
                 </nav>
             </header>
