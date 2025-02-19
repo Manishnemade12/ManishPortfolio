@@ -380,13 +380,13 @@ const BlogPage = () => {
                                     <div className="Copy URL" onClick={() => handlecopyUrl(blogurl)} style={{ cursor: 'pointer' }}>
                                         <BsCopy /> <span>{copied ? 'Copied' : ""}</span>
                                     </div>
-                                    <a target="_blank" href={`http://www.facebook.com/sharer.php?u=${encodeURIComponent(blogurl)}`} rel="noopener noreferrer">
+                                    <a target="_blank" href={`http://www.facebook.com/sharer.php?u=https://manish-portfolio-6mbj.vercel.app/${encodeURIComponent(blogurl)}`} rel="noopener noreferrer">
                                         <RiFacebookFill />
                                     </a>
                                     <a target="_blank" href={`http://www.twitter.com/intent/tweet?text=${encodeURIComponent('Check Out This blog post: ' + blogurl)}`} rel="noopener noreferrer">
                                         <FaTwitter />
                                     </a>
-                                    <a target="_blank" href={`http://wa.me/?text=Check out this Blog Post:${encodeURIComponent(blogurl)}`} rel="noopener noreferrer">
+                                    <a target="_blank" href={`http://wa.me/?text=Check out this Blog Post: https://manish-portfolio-6mbj.vercel.app/${encodeURIComponent(blogurl)}`} rel="noopener noreferrer">
                                         <RiWhatsappFill />
                                     </a>
                                     <a target="_blank" href={`http://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(blogurl)}`} rel="noopener noreferrer">
@@ -491,7 +491,9 @@ const BlogPage = () => {
                                     <Link href="/blogs/category/React Js"><li>React Js<span>{alldata.filter(ab => ab.tags[0] === 'React Js').length}</span></li></Link>
                                     <Link href="/blogs/category/Full Stack"><li>FullStack WebDev<span>{alldata.filter(ab => ab.tags[0] === 'Full Stack').length}</span></li></Link>
                                     <Link href="/blogs/category/Backend"><li>Backend WebDev<span>{alldata.filter(ab => ab.tags[0] === 'Backend').length}</span></li></Link>
-
+                                    <Link href="/blogs/category/Achievements"><li>Achievements<span>{alldata.filter(ab => ab.tags[0] === 'Achievements').length}</span></li></Link>
+                                    <Link href="/blogs/category/Goals"><li>Goals<span>{alldata.filter(ab => ab.tags[0] === 'Goals').length}</span></li></Link>
+                                    <Link href="/blogs/category/Backend"><li>None<span>{alldata.filter(ab => ab.tags[0] === 'None').length}</span></li></Link>
                                 </ul>
                             </div>
                             <div className="rightrecentpost">

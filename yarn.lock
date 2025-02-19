@@ -411,8 +411,8 @@ format@^0.2.0:
     frontend_portfolio "file:"
     gsap "^3.12.5"
     jsonwebtoken "^9.0.2"
-    mongodb "^6.5.0"
-    mongoose "^8.3.0"
+    mongodb "^6.10.0"
+    mongoose "^8.7.2"
     next "^14.2.15"
     react "^18"
     react-dom "^18"
@@ -1146,7 +1146,7 @@ mongodb-connection-string-url@^3.0.0:
     "@types/whatwg-url" "^11.0.2"
     whatwg-url "^13.0.0"
 
-mongodb@^6.5.0, mongodb@~6.12.0:
+mongodb@^6.10.0, mongodb@~6.12.0:
   version "6.12.0"
   resolved "https://registry.npmjs.org/mongodb/-/mongodb-6.12.0.tgz"
   integrity sha512-RM7AHlvYfS7jv7+BXund/kR64DryVI+cHbVAy9P61fnb1RcWZqOW1/Wj2YhqMCx+MuYhqTRGv7AwHBzmsCKBfA==
@@ -1155,7 +1155,7 @@ mongodb@^6.5.0, mongodb@~6.12.0:
     bson "^6.10.1"
     mongodb-connection-string-url "^3.0.0"
 
-mongoose@^8.3.0:
+mongoose@^8.7.2:
   version "8.9.2"
   resolved "https://registry.npmjs.org/mongoose/-/mongoose-8.9.2.tgz"
   integrity sha512-mLWynmZS1v8HTeMxyLhskQncS1SkrjW1eLNuFDYGQMQ/5QrFrxTLNwWXeCRZeKT2lXyaxW8bnJC9AKPT9jYMkw==

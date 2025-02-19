@@ -476,7 +476,10 @@ header.sticky {
     z-index: 99999999999999999999999;
     border-right: 1px solid #fff;
     transition: 0.3s;
+    height: 100%;
 }
+
+
 
 .mobilenavlist.active {
     left: 0;
@@ -5312,3 +5315,19 @@ header.sticky {
         margin: 0 auto; /* Center align root element */
     }
 }
+
+
+.adjustment {
+    position: relative;
+    margin-top: 0;
+    width: 100%;
+  }
+  
+
+  @media screen and (min-width: 380px) and (max-width: 420px) {
+    .preloader svg {
+      width: 480px;
+      height: 100%;
+    }
+  }
+  

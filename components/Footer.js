@@ -1,38 +1,79 @@
-import Link from "next/link";
-import { CiInstagram } from "react-icons/ci";
-import { FaFacebookF, FaGithub, FaInstagram, FaTwitter } from "react-icons/fa6";
+import useFetchSocialLinks from "@/hooks/LinksFetch";
+import { FaGithub, FaInstagram, FaTwitter } from "react-icons/fa6";
 import { GrLinkedinOption } from "react-icons/gr";
 import { LiaBasketballBallSolid } from "react-icons/lia";
+import React from "react";
 
 export default function Footer() {
-    return <>
+    const { socialLinks, loading, error } = useFetchSocialLinks('/api/SocialLink');
+
+    if (loading) {
+        return <p>Loading...</p>;
+    }
+
+    if (error) {
+        return <p>Error: {error}</p>;
+    }
+
+    // Combine all social links into a single object
+    const uniqueLinks = socialLinks && socialLinks.length > 0
+        ? socialLinks.reduce((acc, link) => {
+            return {
+                Twitter: link.Twitter || acc.Twitter,
+                Instagram: link.Instagram || acc.Instagram,
+                Linkedin: link.Linkedin || acc.Linkedin,
+                Github: link.Github || acc.Github,
+                personalweb: link.personalweb || acc.personalweb,
+            };
+        }, {})
+        : {};
+
+    return (
         <footer className="footer">
             <div className="footersec flex flex-center flex-col gap-2">
-                <div className="logo">
-                    {/* <img src="/img/logo3.png" alt="" /> */}
-
-                </div>
-                {/* <div className="ul flex gap-2">
-                        <li><Link href='/resume'>resume</Link></li>
-                        <li><Link href='/skills'>Skills</Link></li>
-                        <li><Link href='/projects'>Projects</Link></li>
-                        <li><Link href='/services'>Education</Link></li>
-                        <li><Link href='/contact'>Contact</Link></li>
-                        
-                </div> */}
                 <ul className="hero_social">
-                <li><a href="" target="_blank"><FaTwitter /></a></li>
-                <li><a href="" target="_blank"><LiaBasketballBallSolid /></a></li>
-                <li><a href="https://in.linkedin.com/in/manish-nemade-aaa69b28a" target="_blank"><GrLinkedinOption /></a></li>
-                <li><a href="https://github.com/Manishnemade12" target="_blank"><FaGithub /></a></li>
-                <li><a href="https://www.instagram.com/manish_nemade_190/" target="_blank"><FaInstagram /></a></li>
+                    {uniqueLinks.Twitter && (
+                        <li>
+                            <a href={uniqueLinks.Twitter} target="_blank" rel="noopener noreferrer">
+                                <FaTwitter />
+                            </a>
+                        </li>
+                    )}
+                    {uniqueLinks.Instagram && (
+                        <li>
+                            <a href={uniqueLinks.Instagram} target="_blank" rel="noopener noreferrer">
+                                <FaInstagram />
+                            </a>
+                        </li>
+                    )}
+                    {uniqueLinks.Linkedin && (
+                        <li>
+                            <a href={uniqueLinks.Linkedin} target="_blank" rel="noopener noreferrer">
+                                <GrLinkedinOption />
+                            </a>
+                        </li>
+                    )}
+                    {uniqueLinks.Github && (
+                        <li>
+                            <a href={uniqueLinks.Github} target="_blank" rel="noopener noreferrer">
+                                <FaGithub />
+                            </a>
+                        </li>
+                    )}
+                    {uniqueLinks.personalweb && (
+                        <li>
+                            <a href={uniqueLinks.personalweb} target="_blank" rel="noopener noreferrer">
+                                <LiaBasketballBallSolid />
+                            </a>
+                        </li>
+                    )}
                 </ul>
 
                 <div className="copyrights">
-                                &copy; 2024 All copyrights Reserved By <span>Manish</span>
+                    &copy; 2024 All copyrights Reserved By <span>Manish</span>
                 </div>
-
             </div>
         </footer>
-    </>
+    );
 }
+

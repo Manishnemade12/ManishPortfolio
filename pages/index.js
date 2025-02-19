@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import { BiDownload } from "react-icons/bi";
-import { FaCalendarDays, FaGithub, FaTwitter } from "react-icons/fa6";
+import { FaCalendarDays, FaGithub, FaInstagram, FaTwitter } from "react-icons/fa6";
 import { GrLinkedinOption } from "react-icons/gr";
 import { LiaBasketballBallSolid } from "react-icons/lia";
 import { GoArrowUpRight } from "react-icons/go";
@@ -9,6 +9,7 @@ import { useEffect, useState } from "react";
 import Spinner from "@/components/Spinner";
 import { CiInstagram } from "react-icons/ci";
 import { PiGraduationCap } from "react-icons/pi";
+import useFetchSocialLinks from "@/hooks/LinksFetch";
 export default function Home() {
   const [activeIndex, setactiveIndex] = useState(0);
   const [loading, setLoading] = useState(true);
@@ -127,8 +128,21 @@ export default function Home() {
     fetchSkillData();
   }, []);
 
+  
+  // Fetch social links
 
-
+  const { socialLinks } = useFetchSocialLinks('/api/SocialLink');
+  const uniqueLinks = socialLinks && socialLinks.length > 0
+        ? socialLinks.reduce((acc, link) => {
+            return {
+                Twitter: link.Twitter || acc.Twitter,
+                Instagram: link.Instagram || acc.Instagram,
+                Linkedin: link.Linkedin || acc.Linkedin,
+                Github: link.Github || acc.Github,
+                personalweb: link.personalweb || acc.personalweb,
+            };
+        }, {})
+        : {};
 
   // // Filter projects based on selected category
   // useEffect(() => {
@@ -236,7 +250,7 @@ export default function Home() {
                 <Link href="/" download="/img/resume.pdf" className="download_cv">
                   Download CV <BiDownload />
                 </Link>
-                <ul className="hero_social">
+                {/* <ul className="hero_social">
                   <li>
                     <a href="https://www.instagram.com/manish_nemade_190/">
                       <CiInstagram />
@@ -257,7 +271,48 @@ export default function Home() {
                       <FaGithub />
                     </a>
                   </li>
-                </ul>
+                </ul> */}
+                 <ul className="hero_social">
+                                   {uniqueLinks.Twitter && (
+                                       <li>
+                                           <a href={uniqueLinks.Twitter} target="_blank" rel="noopener noreferrer">
+                                               <FaTwitter />
+                                           </a>
+                                       </li>
+                                   )}
+                                   {uniqueLinks.Instagram && (
+                                       <li>
+                                           <a href={uniqueLinks.Instagram} target="_blank" rel="noopener noreferrer">
+                                               <FaInstagram />
+                                           </a>
+                                       </li>
+                                   )}
+                                   {uniqueLinks.Linkedin && (
+                                       <li>
+                                           <a href={uniqueLinks.Linkedin} target="_blank" rel="noopener noreferrer">
+                                               <GrLinkedinOption />
+                                           </a>
+                                       </li>
+                                   )}
+                                   {uniqueLinks.Github && (
+                                       <li>
+                                           <a href={uniqueLinks.Github} target="_blank" rel="noopener noreferrer">
+                                               <FaGithub />
+                                           </a>
+                                       </li>
+                                   )}
+                                   {uniqueLinks.personalweb && (
+                                       <li>
+                                           <a href={uniqueLinks.personalweb} target="_blank" rel="noopener noreferrer">
+                                               <LiaBasketballBallSolid />
+                                           </a>
+                                       </li>
+                                   )}
+                               </ul>
+
+
+
+
               </div>
             </div>
 
@@ -271,14 +326,14 @@ export default function Home() {
           </div>
           <div className="funfect_area flex flex-sb">
             <div className="funfect_item" data-aos="fade-right">
-              <h3>0.6+</h3>
+              <h3>6+</h3>
               <h4>
-                Year of <br />
-                Experience
+              Months of <br />
+              Hands-on Experience
               </h4>
             </div>
             <div className="funfect_item" data-aos="fade-up">
-              <h3>10+</h3>
+              <h3>4+</h3>
               <h4>
                 Projects <br />
                 Completed
@@ -447,10 +502,11 @@ export default function Home() {
           </div>
           <div className="project_buttons">
             <button className={selectedCategory === 'All' ? 'active' : ''} onClick={() => setSelectedCategory('All')}>All</button>
-            <button className={selectedCategory === 'Full Stack' ? 'active' : ''} onClick={() => setSelectedCategory('Full Stack')}>WebDev</button>
+            <button className={selectedCategory === 'Full Stack' ? 'active' : ''} onClick={() => setSelectedCategory('Full Stack')}>Full-Stack</button>
             <button className={selectedCategory === 'Next Js' ? 'active' : ''} onClick={() => setSelectedCategory('Next Js')}>NextJs</button>
-            <button className={selectedCategory === 'Database' ? 'active' : ''} onClick={() => setSelectedCategory('Database')}>Database</button>
-            <button className={selectedCategory === 'Kubernetes' ? 'active' : ''} onClick={() => setSelectedCategory('Kubernetes')}>Kubernetes</button>
+            <button className={selectedCategory === 'Frontend' ? 'active' : ''} onClick={() => setSelectedCategory('Frontend')}>Frontend</button>
+            <button className={selectedCategory === 'Backend' ? 'active' : ''} onClick={() => setSelectedCategory('Backend')}>Backend</button>
+            {/* <button className={selectedCategory === 'Kubernetes' ? 'active' : ''} onClick={() => setSelectedCategory('Kubernetes')}>Kubernetes</button> */}
           </div>
 
           <div className="projects_cards">
