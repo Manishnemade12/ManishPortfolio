@@ -224,7 +224,7 @@ const BlogPage = () => {
         return new Intl.DateTimeFormat('en-US', options).format(date);
     };
 
-    const blogurl = `https://portfolio-mansh.vercel.app/blogs/${slug}`;
+    const blogurl = `https://manish-portfolio-6mbj.vercel.app/blogs/${slug}`;
 
     // Copy URL function
     const handlecopyUrl = (url) => {
